@@ -205,9 +205,11 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   content: ''; position: absolute; top: 25px; right: 26px; left: 26px; height: 2px;
   background: var(--accent);
   transform: scaleX(0); transform-origin: right;
-  transition: transform 1.4s var(--ease) .1s;
 }
-.process.in-view::after { transform: scaleX(1); }
+.process.in-view::after {
+  animation: lineFill 3.6s linear .3s forwards;
+}
+@keyframes lineFill { to { transform: scaleX(1); } }
 
 .process-dot {
   position: absolute; top: 21px; width: 10px; height: 10px; border-radius: 50%;
@@ -215,13 +217,13 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   opacity: 0; right: 26px;
 }
 .process.in-view .process-dot {
-  animation: travel 4.5s cubic-bezier(.4,0,.2,1) 1.6s infinite;
+  animation: travel 3.6s linear .3s forwards;
 }
 
 @keyframes travel {
   0% { right: 26px; opacity: 0; }
-  6% { opacity: 1; }
-  94% { opacity: 1; }
+  4% { opacity: 1; }
+  96% { opacity: 1; }
   100% { right: calc(100% - 36px); opacity: 0; }
 }
 
@@ -232,8 +234,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   opacity: 0; transform: translateY(10px);
 }
 .process.in-view .process-step {
-  animation: stepIn .6s var(--ease) forwards;
-  animation-delay: calc(.15s + var(--i) * .16s);
+  animation: stepIn .5s var(--ease) forwards;
+  animation-delay: calc(var(--i) * .05s);
 }
 @keyframes stepIn { to { opacity: 1; transform: none; } }
 
@@ -242,33 +244,22 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   display: grid; place-items: center;
   background: var(--bg-card); border: 1px solid var(--line);
   font-weight: 900; font-size: 17px; color: var(--muted);
-  transition: border-color .3s var(--ease), color .3s var(--ease), box-shadow .3s var(--ease);
 }
+/* delay = dot travel start (.3s) + i * (3.6s / 5 gaps) — lands exactly when the orb reaches this node */
 .process.in-view .process-step .process-node {
-  animation:
-    nodeLit .5s var(--ease) forwards,
-    nodePulse 4.5s cubic-bezier(.4,0,.2,1) infinite;
-  animation-delay: calc(.15s + var(--i) * .16s), calc(1.87s + var(--i) * .792s);
+  animation: nodeHit .55s cubic-bezier(.34,1.56,.64,1) forwards;
+  animation-delay: calc(.3s + var(--i) * .72s);
 }
-@keyframes nodeLit {
-  to { border-color: var(--accent); color: var(--fg); box-shadow: 0 0 0 4px rgba(255,74,28,.12); }
-}
-@keyframes nodePulse {
-  0% { transform: scale(1); box-shadow: 0 0 0 4px rgba(255,74,28,.12); }
-  5% { transform: scale(1.22); box-shadow: 0 0 0 9px rgba(255,74,28,.22), 0 0 22px 6px rgba(255,74,28,.55); }
-  14% { transform: scale(1); box-shadow: 0 0 0 4px rgba(255,74,28,.12); }
-  100% { transform: scale(1); box-shadow: 0 0 0 4px rgba(255,74,28,.12); }
+@keyframes nodeHit {
+  0% { transform: scale(1); border-color: var(--line); color: var(--muted); box-shadow: 0 0 0 0 rgba(255,74,28,0); }
+  45% { transform: scale(1.28); border-color: var(--accent); color: var(--fg); box-shadow: 0 0 0 10px rgba(255,74,28,.22), 0 0 26px 6px rgba(255,74,28,.65); }
+  100% { transform: scale(1); border-color: var(--accent); color: var(--fg); box-shadow: 0 0 0 4px rgba(255,74,28,.14); }
 }
 .process.in-view .process-step .process-label {
-  animation: labelPulse 4.5s cubic-bezier(.4,0,.2,1) infinite;
-  animation-delay: calc(1.87s + var(--i) * .792s);
+  animation: labelHit .3s var(--ease) forwards;
+  animation-delay: calc(.3s + var(--i) * .72s);
 }
-@keyframes labelPulse {
-  0% { color: var(--muted); }
-  5% { color: var(--fg); }
-  20% { color: var(--muted); }
-  100% { color: var(--muted); }
-}
+@keyframes labelHit { to { color: var(--fg); } }
 .process-label {
   font-size: 12.5px; font-weight: 700; color: var(--muted); text-align: center; line-height: 1.3;
 }
