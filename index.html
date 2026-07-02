@@ -99,22 +99,45 @@
           </div>
         </div>
 
-        <div class="block">
-          <h2 class="block-title">תהליך עבודה של 5 שלבים</h2>
-          <div class="flow">
-            <span class="flow-step">טריגר</span>
-            <span class="flow-arrow">←</span>
-            <span class="flow-step">מסר ותסריט</span>
-            <span class="flow-arrow">←</span>
-            <span class="flow-step">זווית</span>
-            <span class="flow-arrow">←</span>
-            <span class="flow-step">צילום</span>
-            <span class="flow-arrow">←</span>
-            <span class="flow-step">עריכה</span>
-            <span class="flow-arrow">←</span>
-            <span class="flow-step">פרסום</span>
+        <div class="block block-process">
+          <h2 class="block-title center">תהליך עבודה של 5 שלבים</h2>
+          <div class="process-wrap">
+            <div class="process" id="process">
+              <span class="process-dot" aria-hidden="true"></span>
+              <div class="process-step" style="--i:0">
+                <span class="process-node">1</span>
+                <span class="process-label">טריגר</span>
+              </div>
+              <div class="process-step" style="--i:1">
+                <span class="process-node">2</span>
+                <span class="process-label">מסר ותסריט</span>
+              </div>
+              <div class="process-step" style="--i:2">
+                <span class="process-node">3</span>
+                <span class="process-label">זווית</span>
+              </div>
+              <div class="process-step" style="--i:3">
+                <span class="process-node">4</span>
+                <span class="process-label">צילום</span>
+              </div>
+              <div class="process-step" style="--i:4">
+                <span class="process-node">5</span>
+                <span class="process-label">עריכה</span>
+              </div>
+              <div class="process-step" style="--i:5">
+                <span class="process-node">6</span>
+                <span class="process-label">פרסום</span>
+              </div>
+            </div>
           </div>
-          <p class="lead small">יישים כבר למחרת הסדנה, לכל אירוע חדש.</p>
+          <p class="lead small center">יישים כבר למחרת הסדנה, לכל אירוע חדש.</p>
+        </div>
+
+        <div class="panel-next">
+          <button class="next-btn" type="button" data-goto="table">
+            <span>להמשך: מה כלול בשירות</span>
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 4v16m0 0l-6-6m6 6l6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
         </div>
       </div>
 
@@ -187,6 +210,13 @@
             </table>
           </div>
         </div>
+
+        <div class="panel-next">
+          <button class="next-btn" type="button" data-goto="pricing">
+            <span>להמשך: מחיר הפרויקט</span>
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 4v16m0 0l-6-6m6 6l6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
       </div>
 
       <!-- PANEL 03 — PRICING -->
@@ -220,6 +250,13 @@
             </div>
           </div>
           <p class="price-note">* הסדנה תועבר במיקום שסופק על ידי הלקוח, בכפוף לתנאים הלוגיסטיים בנספח.</p>
+        </div>
+
+        <div class="panel-next">
+          <button class="next-btn" type="button" data-goto="terms">
+            <span>להמשך: נספח תנאים</span>
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 4v16m0 0l-6-6m6 6l6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
         </div>
       </div>
 
@@ -260,6 +297,13 @@
             <span class="sig-line"></span>
             <span class="sig-date">תאריך: 2/7/26</span>
           </div>
+        </div>
+
+        <div class="panel-next">
+          <button class="next-btn next-btn-restart" type="button" data-goto="workshop">
+            <span>חזרה לתחילת ההצעה</span>
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 20V4m0 0l-6 6m6-6l6 6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
         </div>
       </div>
 
