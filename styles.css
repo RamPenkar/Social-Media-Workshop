@@ -353,19 +353,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .terms-list li:last-child { border-bottom: 0; }
 .terms-list strong { color: var(--fg); font-weight: 800; }
 
-.signatures {
-  display: grid; gap: 20px; grid-template-columns: 1fr; margin-top: 8px;
-}
-@media (min-width: 560px) { .signatures { grid-template-columns: 1fr 1fr; } }
-.sig {
-  display: flex; flex-direction: column; gap: 10px;
-  border: 1px solid var(--line); border-radius: var(--r-lg); padding: 20px 22px;
-  background: var(--bg-card);
-}
-.sig-label { font-weight: 800; font-size: 14px; }
-.sig-line { border-bottom: 1px solid var(--line); height: 30px; }
-.sig-date { color: var(--muted); font-size: 13px; }
-
 /* ---------- Footer ---------- */
 .foot {
   display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap;
