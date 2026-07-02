@@ -245,11 +245,29 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   transition: border-color .3s var(--ease), color .3s var(--ease), box-shadow .3s var(--ease);
 }
 .process.in-view .process-step .process-node {
-  animation: nodeLit .5s var(--ease) forwards;
-  animation-delay: calc(.15s + var(--i) * .16s);
+  animation:
+    nodeLit .5s var(--ease) forwards,
+    nodePulse 4.5s cubic-bezier(.4,0,.2,1) infinite;
+  animation-delay: calc(.15s + var(--i) * .16s), calc(1.87s + var(--i) * .792s);
 }
 @keyframes nodeLit {
   to { border-color: var(--accent); color: var(--fg); box-shadow: 0 0 0 4px rgba(255,74,28,.12); }
+}
+@keyframes nodePulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 4px rgba(255,74,28,.12); }
+  5% { transform: scale(1.22); box-shadow: 0 0 0 9px rgba(255,74,28,.22), 0 0 22px 6px rgba(255,74,28,.55); }
+  14% { transform: scale(1); box-shadow: 0 0 0 4px rgba(255,74,28,.12); }
+  100% { transform: scale(1); box-shadow: 0 0 0 4px rgba(255,74,28,.12); }
+}
+.process.in-view .process-step .process-label {
+  animation: labelPulse 4.5s cubic-bezier(.4,0,.2,1) infinite;
+  animation-delay: calc(1.87s + var(--i) * .792s);
+}
+@keyframes labelPulse {
+  0% { color: var(--muted); }
+  5% { color: var(--fg); }
+  20% { color: var(--muted); }
+  100% { color: var(--muted); }
 }
 .process-label {
   font-size: 12.5px; font-weight: 700; color: var(--muted); text-align: center; line-height: 1.3;
