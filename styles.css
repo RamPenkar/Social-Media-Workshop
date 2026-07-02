@@ -275,12 +275,16 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   transition: transform .25s var(--ease), background .25s var(--ease), color .25s var(--ease);
 }
 .next-btn:hover { transform: translateY(-2px); background: var(--accent); color: #fff; }
-.next-btn svg { transform: rotate(-90deg); transition: transform .25s var(--ease); }
-.next-btn:hover svg { transform: rotate(-90deg) translateX(3px); }
 .next-btn-restart { background: transparent; border: 1px solid var(--line); color: var(--fg); }
 .next-btn-restart:hover { background: var(--accent); border-color: var(--accent); }
-.next-btn-restart svg { transform: rotate(0deg); }
-.next-btn-restart:hover svg { transform: translateY(-3px); }
+
+.next-btn {
+  animation: radioactiveGlow 2.2s ease-in-out infinite;
+}
+@keyframes radioactiveGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255,74,28,.55), 0 0 14px 2px rgba(255,74,28,.35); }
+  50% { box-shadow: 0 0 0 14px rgba(255,74,28,0), 0 0 28px 8px rgba(255,74,28,.65); }
+}
 
 /* ---------- Service table ---------- */
 .table-wrap { border-radius: var(--r-lg); overflow: hidden; border: 1px solid var(--line); }
