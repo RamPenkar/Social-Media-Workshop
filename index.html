@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=8" />
+  <link rel="stylesheet" href="styles.css?v=9" />
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div>
@@ -101,35 +101,34 @@
 
         <div class="block block-process">
           <h2 class="block-title center">תהליך עבודה של 5 שלבים</h2>
-          <div class="process-wrap">
-            <div class="process" id="process">
-              <svg class="process-path-svg" width="300" height="460" viewBox="0 0 300 460" preserveAspectRatio="xMidYMin meet" aria-hidden="true">
-                <path class="process-path-bg" d="M230,60 L100,60 Q70,60 70,90 L70,190 Q70,220 100,220 L200,220 Q230,220 230,250 L230,350 Q230,380 200,380 L70,380" />
-                <path class="process-path-fg" d="M230,60 L100,60 Q70,60 70,90 L70,190 Q70,220 100,220 L200,220 Q230,220 230,250 L230,350 Q230,380 200,380 L70,380" pathLength="100" />
-              </svg>
-              <span class="process-dot" aria-hidden="true"></span>
-              <div class="process-step" style="--i:0">
-                <span class="process-node">1</span>
-                <span class="process-label">טריגר</span>
+          <div class="process-pyramid" id="process">
+            <div class="pyramid-row">
+              <div class="tile" style="--i:0">
+                <span class="tile-num">1</span>
+                <span class="tile-label">טריגר</span>
               </div>
-              <div class="process-step" style="--i:1">
-                <span class="process-node">2</span>
-                <span class="process-label">מסר ותסריט</span>
+              <div class="tile" style="--i:1">
+                <span class="tile-num">2</span>
+                <span class="tile-label">מסר ותסריט</span>
               </div>
-              <div class="process-step" style="--i:2">
-                <span class="process-node">3</span>
-                <span class="process-label">זווית</span>
+              <div class="tile" style="--i:2">
+                <span class="tile-num">3</span>
+                <span class="tile-label">זווית</span>
               </div>
-              <div class="process-step" style="--i:3">
-                <span class="process-node">4</span>
-                <span class="process-label">צילום</span>
+            </div>
+            <div class="pyramid-row">
+              <div class="tile" style="--i:3">
+                <span class="tile-num">4</span>
+                <span class="tile-label">צילום</span>
               </div>
-              <div class="process-step" style="--i:4">
-                <span class="process-node">5</span>
-                <span class="process-label">עריכה</span>
+              <div class="tile" style="--i:4">
+                <span class="tile-num">5</span>
+                <span class="tile-label">עריכה</span>
               </div>
-              <div class="process-step process-step-final" style="--i:5">
-                <span class="process-node process-node-final">פרסום</span>
+            </div>
+            <div class="pyramid-row">
+              <div class="tile tile-final" style="--i:5">
+                <span class="tile-label">פרסום</span>
               </div>
             </div>
           </div>
@@ -301,6 +300,6 @@
     </footer>
   </main>
 
-  <script src="app.js?v=8"></script>
+  <script src="app.js?v=9"></script>
 </body>
 </html>
