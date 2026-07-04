@@ -245,6 +245,12 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   background: var(--bg-card); border: 1px solid var(--line);
   font-weight: 900; font-size: 17px; color: var(--muted);
 }
+.process-step-final { width: auto; }
+.process-node-final {
+  width: 84px; height: 84px; font-size: 14.5px; font-weight: 800; letter-spacing: -.01em;
+  padding: 0 6px; text-align: center;
+  margin-top: -16px; /* re-center on the line: flex-start aligns tops, so the extra 32px height must be pulled back up by half */
+}
 /* delay = dot travel start (.3s) + i * (3.6s / 5 gaps) — lands exactly when the orb reaches this node */
 .process.in-view .process-step .process-node {
   animation: nodeHit .55s cubic-bezier(.34,1.56,.64,1) forwards;
@@ -274,7 +280,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   }
   .process {
     position: relative; display: block;
-    width: min(100%, 300px); height: 440px; margin: 0 auto; padding: 0;
+    width: min(100%, 300px); height: 460px; margin: 0 auto; padding: 0;
   }
   .process::before, .process::after { content: none; }
 
@@ -291,7 +297,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
   .process-dot {
     top: 0; right: auto; left: 0; width: 12px; height: 12px;
-    offset-path: path('M230,60 L70,60 L70,220 L230,220 L230,380 L70,380');
+    offset-path: path('M230,60 L100,60 Q70,60 70,90 L70,190 Q70,220 100,220 L200,220 Q230,220 230,250 L230,350 Q230,380 200,380 L70,380');
     offset-distance: 0%;
   }
   .process.in-view .process-dot { animation: travelPath 3.6s linear .3s forwards; }
@@ -312,6 +318,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .process-step:nth-of-type(4) { left: 230px; top: 220px; }
   .process-step:nth-of-type(5) { left: 230px; top: 380px; }
   .process-step:nth-of-type(6) { left: 70px; top: 380px; }
+  .process-node-final { margin-top: 0; }
   .process-label { text-align: center; font-size: 13px; }
 }
 
