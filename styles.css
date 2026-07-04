@@ -280,12 +280,13 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   }
   .process {
     position: relative; display: block;
-    width: min(100%, 300px); height: 460px; margin: 0 auto; padding: 0;
+    width: min(100%, 300px); min-width: 0; height: 460px; margin: 0 auto; padding: 0;
   }
   .process::before, .process::after { content: none; }
 
   .process-path-svg {
-    display: block; position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible;
+    display: block; position: absolute; top: 0; right: 0; left: 0; margin: 0 auto;
+    width: 300px; height: 460px; overflow: visible;
   }
   .process-path-bg { fill: none; stroke: var(--line); stroke-width: 3; stroke-linejoin: round; }
   .process-path-fg {
